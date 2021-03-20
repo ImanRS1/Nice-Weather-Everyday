@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     axios
       .get(
-        "http://api.weatherapi.com/v1/current.json?key=0abe7ad125fb4e93af2141636212003&q=London&aqi=no"
+        "http://api.weatherapi.com/v1/current.json?key=0abe7ad125fb4e93af2141636212003&q=London"
       )
       .then((fetchedData) => {
         setWeather(fetchedData.data);
@@ -24,10 +24,11 @@ const Home = () => {
   const searchLocation = () => {
     axios
       .get(
-        `http://api.weatherapi.com/v1/current.json?key=0abe7ad125fb4e93af2141636212003&q=${weatherInput}&aqi=no`
+        `http://api.weatherapi.com/v1/current.json?key=0abe7ad125fb4e93af2141636212003&q=${weatherInput}`
       )
       .then((fetchedData) => {
         setWeather(fetchedData.data);
+        console.log(fetchedData.data);
       });
   };
 
