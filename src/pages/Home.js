@@ -6,6 +6,8 @@ const Home = () => {
   const [weatherInput, setWeatherInput] = useState("");
 
   useEffect(() => {
+
+    //kolla upp ip lookup API på weatherapi
     axios
       .get(
         "http://api.weatherapi.com/v1/current.json?key=0abe7ad125fb4e93af2141636212003&q=London"
