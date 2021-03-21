@@ -10,6 +10,3 @@ const locationReducer = (state = initState, action) => {
       return { ...state };
   }
 };
-
-
-//Setting up redux, 3
