@@ -10,5 +10,7 @@ const initState = {
         return { ...state };
     }
   };
+
+  export default forecastReducer;
   
   
