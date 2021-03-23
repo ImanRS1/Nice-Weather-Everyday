@@ -1,17 +1,20 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadLocation } from "../actions/locationAction";
 
 const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadLocation());
-  }, []);
+  }, [dispatch]);
+
+  const location = useSelector((state) => state.location);
+  console.log(location.location.location.name);
 
   return (
     <div>
-      <h1>Hej</h1>
+      <h1>hej {location.location.location.name}</h1>
       <h2>då</h2>
     </div>
   );
