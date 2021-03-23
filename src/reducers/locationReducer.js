@@ -5,7 +5,7 @@ const initState = {
 const locationReducer = (state = initState, action) => {
   switch (action.type) {
     case "FETCH_LOCATION":
-      return { ...state };
+      return { ...state, location: action.payload.location.data };
     default:
       return { ...state };
   }

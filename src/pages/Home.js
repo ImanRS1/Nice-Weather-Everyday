@@ -1,7 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { loadLocation } from "../actions/locationAction";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadLocation());
+  }, []);
+
+  return (
+    <div>
+      <h1>Hej</h1>
+      <h2>då</h2>
+    </div>
+  );
+
+  /* 
   const [weather, setWeather] = useState(null);
   const [weatherInput, setWeatherInput] = useState("");
 
@@ -57,7 +72,7 @@ const Home = () => {
         </div>
       )}
     </div>
-  );
+  ); */
 };
 
 export default Home;
