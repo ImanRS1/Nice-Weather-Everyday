@@ -9,12 +9,12 @@ const Home = () => {
     dispatch(loadLocation());
   }, [dispatch]);
 
-  const location = useSelector((state) => state.location);
-  console.log(location.location.location.name);
+  const location = useSelector((state) => state.location.location);
+  console.log(location.location);
 
   return (
     <div>
-      <h1>hej {location.location.location.name}</h1>
+      <h1>hej {location.location.name}</h1>
       <h2>då</h2>
     </div>
   );
