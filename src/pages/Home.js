@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadLocation } from "../actions/locationAction";
+import Weather from "../components/weather";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -9,12 +10,18 @@ const Home = () => {
     dispatch(loadLocation());
   }, [dispatch]);
 
-  const location = useSelector((state) => state.location.location);
-  console.log(location.location);
+  const fetchedLocation = useSelector((state) => state.location.location);
+  const fetchedCurrent = useSelector((state) => state.location.current);
+  /* console.log(fetchedCurrent); */
+
+  const testerr2 = fetchedCurrent;
+  console.log(testerr2);
 
   return (
     <div>
-      <h1>hej {location.location.name}</h1>
+      <h1>
+        Current weather in: <Weather weather={fetchedLocation.country} />
+      </h1>
       <h2>då</h2>
     </div>
   );
