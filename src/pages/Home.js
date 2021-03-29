@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
+import Header from "../components/header";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Home = () => {
 
   return (
     <div>
+      <Header />
       <h1>
         Current weather in: <Weather weather={fetchedLocation.country} />
       </h1>
