@@ -1,5 +1,5 @@
 const Weather = ({ weather }) => {
-  return <h1>{weather}</h1>;
+  return <div>{weather}</div>;
 };
 
 export default Weather;
