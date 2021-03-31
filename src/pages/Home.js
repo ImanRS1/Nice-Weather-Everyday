@@ -13,15 +13,16 @@ const Home = () => {
 
   const fetchedLocation = useSelector((state) => state.location.location);
   const fetchedCurrent = useSelector((state) => state.location.current);
-  console.log(fetchedCurrent);
+  console.log(fetchedLocation);
 
   return (
     <div>
       <Header />
-      <h3>
-        Current weather in: <Weather weather={fetchedLocation.country} /> is{" "}
-        {fetchedCurrent.temp_c} and the humidity is {fetchedCurrent.humidity}
-      </h3>
+      <Weather
+        weather={fetchedCurrent.temp_c}
+        location={fetchedLocation.name}
+        country={fetchedLocation.country}
+      />
     </div>
   );
 
