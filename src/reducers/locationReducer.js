@@ -15,7 +15,8 @@ const locationReducer = (state = initState, action) => {
     case "FETCH_SEARCHED":
       return {
         ...state,
-        searched: action.payload.searched,
+        searchedLocation: action.payload.location,
+        searchedCurrent: action.payload.current,
       };
     case "CLEAR_SEARCHED":
       return {

@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
@@ -11,9 +10,15 @@ const Home = () => {
     dispatch(loadLocation());
   }, [dispatch]);
 
+  /*   const fetchedSearchedLocation = useSelector(
+    (state) => state.searchedLocation.location
+  );
+  const fetchedSearchedCurrent = useSelector(
+    (state) => state.searchedLocation.current
+  ); */
+
   const fetchedLocation = useSelector((state) => state.location.location);
   const fetchedCurrent = useSelector((state) => state.location.current);
-  console.log(fetchedLocation);
 
   return (
     <div>
