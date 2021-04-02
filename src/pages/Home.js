@@ -10,12 +10,14 @@ const Home = () => {
     dispatch(loadLocation());
   }, [dispatch]);
 
-  /*   const fetchedSearchedLocation = useSelector(
-    (state) => state.searchedLocation.location
+  const searchedLocation = useSelector(
+    (state) => state.location.searchedLocation
   );
-  const fetchedSearchedCurrent = useSelector(
-    (state) => state.searchedLocation.current
-  ); */
+  const searchedCurrent = useSelector(
+    (state) => state.location.searchedCurrent
+  );
+  console.log(searchedLocation);
+  console.log(searchedCurrent);
 
   const fetchedLocation = useSelector((state) => state.location.location);
   const fetchedCurrent = useSelector((state) => state.location.current);
@@ -23,6 +25,17 @@ const Home = () => {
   return (
     <div>
       <Header />
+
+      {typeof searchedLocation !== "undefined" ? (
+        <Weather
+          weather={searchedCurrent.temp_c}
+          location={searchedLocation.name}
+          country={searchedLocation.country}
+        />
+      ) : (
+        ""
+      )}
+
       <Weather
         weather={fetchedCurrent.temp_c}
         location={fetchedLocation.name}

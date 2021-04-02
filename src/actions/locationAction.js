@@ -18,8 +18,8 @@ export const fetchSearch = (location) => async (dispatch) => {
   const weatherCurrent = await axios.get(searchLocationURL(location));
   const weatherLocation = await axios.get(searchLocationURL(location));
 
-  console.log(weatherLocation.data.location);
-  console.log(weatherCurrent.data.current);
+ /*  console.log(weatherLocation.data.location);
+  console.log(weatherCurrent.data.current); */
 
   dispatch({
     type: "FETCH_SEARCHED",
