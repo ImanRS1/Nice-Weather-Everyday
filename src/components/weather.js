@@ -2,7 +2,7 @@ const Weather = ({ weather, location, country }) => {
   return (
     <div>
       <h3>
-        The current weather in {location}, {country} is currently {weather} degrees celcius.
+        The current weather in {location} - {country}, is {weather} degrees celcius.
       </h3>
     </div>
   );

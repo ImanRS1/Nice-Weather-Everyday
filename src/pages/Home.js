@@ -16,8 +16,6 @@ const Home = () => {
   const searchedCurrent = useSelector(
     (state) => state.location.searchedCurrent
   );
-  console.log(typeof searchedLocation);
-  console.log(searchedCurrent);
 
   const fetchedLocation = useSelector((state) => state.location.location);
   const fetchedCurrent = useSelector((state) => state.location.current);

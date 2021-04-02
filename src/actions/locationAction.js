@@ -1,4 +1,4 @@
-import { searchLocationURL, defaultLocationURL } from "../api";
+import { searchLocationURL, defaultLocationURL, forecastLocationURL } from "../api";
 import axios from "axios";
 
 export const loadLocation = () => async (dispatch) => {
@@ -17,9 +17,9 @@ export const loadLocation = () => async (dispatch) => {
 export const fetchSearch = (location) => async (dispatch) => {
   const weatherCurrent = await axios.get(searchLocationURL(location));
   const weatherLocation = await axios.get(searchLocationURL(location));
+  const weatherForecast = await axios.get(forecastLocationURL(location));
 
- /*  console.log(weatherLocation.data.location);
-  console.log(weatherCurrent.data.current); */
+  console.log(weatherForecast.data.forecast.forecastday);
 
   dispatch({
     type: "FETCH_SEARCHED",
