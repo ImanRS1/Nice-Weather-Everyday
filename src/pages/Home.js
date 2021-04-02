@@ -16,7 +16,7 @@ const Home = () => {
   const searchedCurrent = useSelector(
     (state) => state.location.searchedCurrent
   );
-  console.log(searchedLocation);
+  console.log(typeof searchedLocation);
   console.log(searchedCurrent);
 
   const fetchedLocation = useSelector((state) => state.location.location);
@@ -36,11 +36,21 @@ const Home = () => {
         ""
       )}
 
-      <Weather
+      {typeof searchedLocation === "undefined" ? (
+        <Weather
+          weather={23}
+          location={"a nice city"}
+          country={" somewhere on earth"}
+        />
+      ) : (
+        ""
+      )}
+
+      {/*  <Weather
         weather={fetchedCurrent.temp_c}
         location={fetchedLocation.name}
         country={fetchedLocation.country}
-      />
+      /> */}
     </div>
   );
 
