@@ -1,12 +1,16 @@
-const Forecast= ({ weather, location, country }) => {
-    return (
-      <div>
-        <h3>
-          FORECAS: The current weather in {location} - {country}, is {weather} degrees celcius.
-        </h3>
-      </div>
-    );
-  };
-  
-  export default Forecast;
-  
+const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
+  return (
+    <div>
+      <h3>
+        {date}
+        <div>Temperature: {weather} degrees celcius.</div>
+        <div>
+          Sunrise: {sunrise} - Sunset: {sunset}
+        </div>
+        Condition: {condition.text}
+      </h3>
+    </div>
+  );
+};
+
+export default Forecast;

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
 import Header from "../components/header";
+import Forecast from "../components/forecast";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,9 @@ const Home = () => {
 
   const forecast = useSelector((state) => state.location.searchedForecast);
 
-  console.log(forecast);
+  /*   if (forecast === "undefined") {
+    const mapForecast = forecast.map(console.log(forecast));
+  } */
 
   /* 
   const fetchedLocation = useSelector((state) => state.location.location);
@@ -49,11 +52,23 @@ const Home = () => {
         ""
       )}
 
-      {/*  <Weather
-        weather={fetchedCurrent.temp_c}
-        location={fetchedLocation.name}
-        country={fetchedLocation.country}
-      /> */}
+      {typeof forecast !== "undefined" ? (
+        <div>
+          {forecast.map((thisForecast) => (
+            /*  console.log(thisForecast) */
+            <Forecast
+              date={thisForecast.date}
+              sunrise={thisForecast.astro.sunrise}
+              sunset={thisForecast.astro.sunset}
+              weather={thisForecast.day.avgtemp_c}
+              key={thisForecast.date}
+              condition={thisForecast.day.condition}
+            />
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
