@@ -6,7 +6,7 @@ import Header from "../components/header";
 import Forecast from "../components/forecast";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import backGroundPicNight from "../images/background-night.png";
+import backGroundPicNight from "../images/d1.png";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -53,14 +53,16 @@ const Home = () => {
           <div>
             {forecast.map((thisForecast) => (
               /*  console.log(thisForecast) */
-              <Forecast
-                date={thisForecast.date}
-                sunrise={thisForecast.astro.sunrise}
-                sunset={thisForecast.astro.sunset}
-                weather={thisForecast.day.avgtemp_c}
-                key={thisForecast.date}
-                condition={thisForecast.day.condition}
-              />
+              <div className="foreCast-container">
+                <Forecast
+                  date={thisForecast.date}
+                  sunrise={thisForecast.astro.sunrise}
+                  sunset={thisForecast.astro.sunset}
+                  weather={thisForecast.day.avgtemp_c}
+                  key={thisForecast.date}
+                  condition={thisForecast.day.condition}
+                />
+              </div>
             ))}
           </div>
         ) : (
@@ -79,6 +81,7 @@ const HomeContainer = styled(motion.div)`
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 80vw;
   height: 100vh;
