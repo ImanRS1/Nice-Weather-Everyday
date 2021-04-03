@@ -26,6 +26,7 @@ export const fetchSearch = (location) => async (dispatch) => {
     payload: {
       location: weatherLocation.data.location,
       current: weatherCurrent.data.current,
+      forecast: weatherForecast.data.forecast.forecastday,
     },
   });
 };
