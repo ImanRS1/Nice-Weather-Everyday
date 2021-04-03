@@ -42,6 +42,19 @@ const HeaderContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  input {
+    width: 20rem;
+    height: 2rem;
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+  }
+  button {
+    height: 2.4rem;
+    width: 5rem;
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+  }
 `;
 
 export default Header;

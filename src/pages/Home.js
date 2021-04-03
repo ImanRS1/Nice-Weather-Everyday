@@ -51,9 +51,8 @@ const Home = () => {
 
         {typeof forecast !== "undefined" ? (
           <div>
-            {forecast.map((thisForecast) => (
-              /*  console.log(thisForecast) */
-              <div className="foreCast-container">
+            <ForecastItem>
+              {forecast.map((thisForecast) => (
                 <Forecast
                   date={thisForecast.date}
                   sunrise={thisForecast.astro.sunrise}
@@ -62,8 +61,8 @@ const Home = () => {
                   key={thisForecast.date}
                   condition={thisForecast.day.condition}
                 />
-              </div>
-            ))}
+              ))}
+            </ForecastItem>
           </div>
         ) : (
           ""
@@ -77,6 +76,10 @@ const Home = () => {
   );
 };
 
+const ForecastItem = styled(motion.div)`
+  display: flex;
+`;
+
 const HomeContainer = styled(motion.div)`
   margin: auto;
   display: flex;
@@ -84,7 +87,7 @@ const HomeContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   width: 80vw;
-  height: 100vh;
+  height: 98vh;
   color: #fefefe;
   z-index: 2;
   position: relative;
@@ -93,6 +96,7 @@ const HomeContainer = styled(motion.div)`
 const HomeBackground = styled(motion.div)`
   background-color: #64a4f8;
   z-index: 0;
+  overflow: hidden;
   img {
     position: absolute;
     top: 0;

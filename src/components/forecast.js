@@ -31,10 +31,16 @@ const Condition = styled(motion.div)`
 `;
 
 const ForeCastItem = styled(motion.div)`
-  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
   padding: 0.5rem;
-  background-color: rgba(5, 5, 5, 0.2);
+  background-color: rgba(5, 5, 5, 0.15);
   box-shadow: 5px 10px 18px #2b2b2b;
+  height: 10rem;
+  width: 15rem;
   h3 {
     margin: 0;
   }
@@ -43,7 +49,9 @@ const ForeCastItem = styled(motion.div)`
 const SunRiseAndSet = styled(motion.div)`
   display: flex;
   align-items: center;
+
   img {
+    margin: 0.1rem;
     padding: 0.5rem;
     height: 2rem;
     width: 2rem;
