@@ -22,6 +22,8 @@ const Home = () => {
     (state) => state.location.searchedCurrent
   );
 
+  console.log(searchedCurrent);
+
   const forecast = useSelector((state) => state.location.searchedForecast);
 
   return (
@@ -34,6 +36,9 @@ const Home = () => {
             weather={searchedCurrent.temp_c}
             location={searchedLocation.name}
             country={searchedLocation.country}
+            condition={searchedCurrent.condition}
+            conditionText={searchedCurrent.condition.text}
+            conditionIcon={searchedCurrent.condition.icon}
           />
         ) : (
           ""
@@ -44,6 +49,8 @@ const Home = () => {
             weather={23}
             location={"a nice city"}
             country={" somewhere on earth"}
+            conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
+            conditionText={"Sunny & Nice"}
           />
         ) : (
           ""
