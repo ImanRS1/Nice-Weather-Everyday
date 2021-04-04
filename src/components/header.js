@@ -46,14 +46,22 @@ const HeaderContainer = styled(motion.div)`
   input {
     width: 20rem;
     height: 2rem;
+    border: none;
     border-top-left-radius: 0.8rem;
     border-bottom-left-radius: 0.8rem;
+    &:focus {
+      outline: none;
+    }
   }
   button {
-    height: 2.4rem;
+    height: 2.1rem;
+    border: none;
     width: 5rem;
     border-top-right-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
+    &:focus {
+      outline: none;
+    }
   }
 `;
 
