@@ -7,7 +7,7 @@ import Forecast from "../components/forecast";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import backGroundPicNight from "../images/n1.jpg";
-import moonPic from "../images/moon.png";
+import moonPic from "../images/moon.jpg";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -113,23 +113,17 @@ const HomeBackground = styled(motion.div)`
   height: 100vh;
   width: 100vw;
 
-  .planet-container {
-    width: 20%;
-    height: 35%;
-    background-color: red;
-  }
   .moon-pic {
     border-radius: 50%;
-    box-shadow: 0 0 90px 15px rgba(255, 255, 255, 1),
-      inset 0 0 15px 5px rgba(255, 255, 255, 0.1),
-      inset 0 0 5px 50px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #fff7f7,
+      0 0 4vw 0.4vw #fff7f7, inset 0 0 1.5vw 0.4vw #fff7f7,
+      inset 0 0 0.4vw 0.2vw #fff7f7, inset 0 0 0.5vw 0.2vw #fff7f7;
     box-sizing: border-box;
     position: absolute;
     top: -70px;
     right: -79px;
     width: 20%;
     height: 35%;
-    animation: spin 2s infinite linear;
   }
   .background-pic {
     position: absolute;
