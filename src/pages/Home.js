@@ -4,6 +4,7 @@ import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
 import Header from "../components/header";
 import Forecast from "../components/forecast";
+import Moon from "../components/moon";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import backGroundPicNight from "../images/n1.jpg";
@@ -80,7 +81,7 @@ const Home = () => {
       <HomeBackground>
         <img className="background-pic" src={backGroundPicNight} />
         <div className="planet-container">
-          <img className="moon-pic" src={moonPic} />
+          <Moon />
         </div>
       </HomeBackground>
     </div>
@@ -113,17 +114,16 @@ const HomeBackground = styled(motion.div)`
   height: 100vh;
   width: 100vw;
 
-  .moon-pic {
-    border-radius: 50%;
-    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #fff7f7,
-      0 0 4vw 0.4vw #fff7f7, inset 0 0 1.5vw 0.4vw #fff7f7,
-      inset 0 0 0.4vw 0.2vw #fff7f7, inset 0 0 0.5vw 0.2vw #fff7f7;
-    box-sizing: border-box;
-    position: absolute;
-    top: -70px;
-    right: -79px;
-    width: 20%;
-    height: 35%;
+  .planet-container {
+    img {
+      border-radius: 50%;
+      box-sizing: border-box;
+      position: absolute;
+      top: -70px;
+      right: -79px;
+      width: 20%;
+      height: 35%;
+    }
   }
   .background-pic {
     position: absolute;
