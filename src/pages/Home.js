@@ -8,7 +8,6 @@ import Moon from "../components/moon";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import backGroundPicNight from "../images/n1.jpg";
-import moonPic from "../images/moon.jpg";
 
 const Home = () => {
   const dispatch = useDispatch();

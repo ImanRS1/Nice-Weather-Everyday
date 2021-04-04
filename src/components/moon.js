@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { fetchSearch } from "../actions/locationAction";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -12,7 +11,7 @@ const Moon = () => {
   return (
     <div>
       <MoonContainer>
-        <img className="moon-pic" src={moonPic} />
+        <img className="moon-pic" src={moonPic} alt="picture of the moon" />
       </MoonContainer>
     </div>
   );

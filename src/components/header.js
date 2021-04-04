@@ -44,8 +44,8 @@ const HeaderContainer = styled(motion.div)`
   align-items: center;
 
   input {
+    padding: 0.5rem 0.5rem;
     width: 20rem;
-    height: 2rem;
     border: none;
     border-top-left-radius: 0.8rem;
     border-bottom-left-radius: 0.8rem;
@@ -54,7 +54,7 @@ const HeaderContainer = styled(motion.div)`
     }
   }
   button {
-    height: 2.1rem;
+    padding: 0.5rem 0;
     border: none;
     width: 5rem;
     border-top-right-radius: 0.8rem;
