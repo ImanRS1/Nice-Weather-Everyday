@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import moonPic from "../images/moon.jpg";
 
 const Moon = () => {
-  const dispatch = useDispatch();
-  const [textInput, setTextInput] = useState("");
 
   return (
     <div>
