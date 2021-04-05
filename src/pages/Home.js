@@ -40,7 +40,6 @@ const Home = () => {
               conditionText={searchedCurrent.condition.text}
               conditionIcon={searchedCurrent.condition.icon}
             />
-
             <ForecastItem>
               {forecast.map((thisForecast) => (
                 <Forecast

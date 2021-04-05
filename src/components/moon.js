@@ -7,7 +7,13 @@ const Moon = () => {
   return (
     <div>
       <MoonContainer>
-        <img className="moon-pic" src={moonPic} alt="picture of the moon" />
+        <motion.img
+          className="moon-pic"
+          src={moonPic}
+          alt="picture of the moon"
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          animate={{ rotate: 360 }}
+        />
       </MoonContainer>
     </div>
   );

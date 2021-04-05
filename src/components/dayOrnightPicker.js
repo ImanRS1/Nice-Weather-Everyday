@@ -11,10 +11,8 @@ const DayOrNightPicker = ({ dayornight }) => {
 
   if (dayornight == 1) {
     isDay = true;
-    console.log("tureeee");
   } else {
     isDay = false;
-    console.log("faaaaaaaalse");
   }
 
   return (
