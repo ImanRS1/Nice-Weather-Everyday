@@ -7,6 +7,7 @@ import Forecast from "../components/forecast";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import DayOrNightPicker from "../components/dayOrnightPicker";
+import { fadeInAnim, fadeInAnim2, animStagger } from "../animations";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -29,41 +30,48 @@ const Home = () => {
     <div>
       <HomeContainer>
         <Header />
-
-        {typeof searchedLocation !== "undefined" ? (
-          <div>
-            <Weather
-              weather={searchedCurrent.temp_c}
-              location={searchedLocation.name}
-              country={searchedLocation.country}
-              condition={searchedCurrent.condition}
-              conditionText={searchedCurrent.condition.text}
-              conditionIcon={searchedCurrent.condition.icon}
-            />
-            <ForecastItem>
-              {forecast.map((thisForecast) => (
-                <Forecast
-                  date={thisForecast.date}
-                  sunrise={thisForecast.astro.sunrise}
-                  sunset={thisForecast.astro.sunset}
-                  weather={thisForecast.day.avgtemp_c}
-                  key={thisForecast.date}
-                  condition={thisForecast.day.condition}
-                />
-              ))}
-            </ForecastItem>
-          </div>
-        ) : (
-          <div>
-            <Weather
-              weather={23}
-              location={"a nice place"}
-              country={" somewhere on earth"}
-              conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
-              conditionText={"Sunny & Nice"}
-            />
-          </div>
-        )}
+        <motion.div variants={fadeInAnim} initial="hidden" animate="show">
+          {typeof searchedLocation !== "undefined" ? (
+            <div>
+              <Weather
+                weather={searchedCurrent.temp_c}
+                location={searchedLocation.name}
+                country={searchedLocation.country}
+                condition={searchedCurrent.condition}
+                conditionText={searchedCurrent.condition.text}
+                conditionIcon={searchedCurrent.condition.icon}
+              />
+              <ForecastItem>
+                {forecast.map((thisForecast) => (
+                  <motion.div
+                    variants={fadeInAnim2}
+                    initial="hidden"
+                    animate="show"
+                  >
+                    <Forecast
+                      date={thisForecast.date}
+                      sunrise={thisForecast.astro.sunrise}
+                      sunset={thisForecast.astro.sunset}
+                      weather={thisForecast.day.avgtemp_c}
+                      key={thisForecast.date}
+                      condition={thisForecast.day.condition}
+                    />
+                  </motion.div>
+                ))}
+              </ForecastItem>
+            </div>
+          ) : (
+            <div>
+              <Weather
+                weather={23}
+                location={"a nice place"}
+                country={" somewhere on earth"}
+                conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
+                conditionText={"Sunny & Nice"}
+              />
+            </div>
+          )}
+        </motion.div>
       </HomeContainer>
 
       <HomeBackground>
@@ -92,6 +100,7 @@ const HomeContainer = styled(motion.div)`
   color: #fefefe;
   z-index: 2;
   position: relative;
+  transition: all 0.5s ease;
 `;
 
 const HomeBackground = styled(motion.div)`

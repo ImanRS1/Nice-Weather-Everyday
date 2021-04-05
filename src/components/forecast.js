@@ -2,10 +2,11 @@ import sunriseImage from "../images/sunrise.svg";
 import sunsetImage from "../images/sunset.svg";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { fadeInAnim2 } from "../animations";
 
 const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
   return (
-    <div>
+    <motion.div>
       <ForeCastItem>
         {date}
         <div>Temperature: {weather}&#176;C.</div>
@@ -20,7 +21,7 @@ const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
           {condition.text}
         </Condition>
       </ForeCastItem>
-    </div>
+    </motion.div>
   );
 };
 

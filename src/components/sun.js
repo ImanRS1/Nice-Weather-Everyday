@@ -13,7 +13,7 @@ const Sun = () => {
           alt="picture of the sun"
           transition={{
             repeatType: "reverse",
-            duration: 3,
+            duration: 2,
             repeat: Infinity,
             ease: "linear",
           }}

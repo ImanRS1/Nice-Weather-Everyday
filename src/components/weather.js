@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { fadeInAnim } from "../animations";
 
 const Weather = ({
   weather,
@@ -10,14 +11,16 @@ const Weather = ({
 }) => {
   return (
     <WeatherContainer>
-      <h2>
-        The current weather in {location} - {country}, is {weather} &#176;C.
-      </h2>
+      <motion.div variants={fadeInAnim} initial="hidden" animate="show">
+        <h2>
+          The current weather in {location} - {country}, is {weather} &#176;C.
+        </h2>
 
-      <Condition>
-        <img src={conditionIcon} />
-        <h2>{conditionText}</h2>
-      </Condition>
+        <Condition>
+          <img src={conditionIcon} />
+          <h2>{conditionText}</h2>
+        </Condition>
+      </motion.div>
     </WeatherContainer>
   );
 };

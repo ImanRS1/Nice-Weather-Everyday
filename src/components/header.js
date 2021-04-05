@@ -3,6 +3,7 @@ import { fetchSearch } from "../actions/locationAction";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { titleAnim, searchBarAnim } from "../animations";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -21,18 +22,32 @@ const Header = () => {
   return (
     <div>
       <HeaderContainer>
-        <h1>Nice Weather Everyday</h1>
-        <form className="search">
+        <motion.h1 variants={titleAnim} initial="hidden" animate="show">
+          Nice Weather Everyday
+        </motion.h1>
+        <motion.form
+          className="search"
+          variants={searchBarAnim}
+          initial="hidden"
+          animate="show"
+        >
           <input
             type="text"
             placeholder="Enter a location..."
             value={textInput}
             onChange={inputHandler}
           />
-          <button onClick={submitSearch} type="submit">
+          <motion.button
+            onClick={submitSearch}
+            type="submit"
+            whileHover={{
+              color: "white",
+              backgroundColor: "silver",
+            }}
+          >
             Search
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </HeaderContainer>
     </div>
   );
