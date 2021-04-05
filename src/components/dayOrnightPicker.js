@@ -1,25 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import moonPic from "../images/moon.jpg";
+import Moon from "../components/moon";
+import Sun from "../components/sun";
+import backGroundPicNight from "../images/n1.jpg";
+import backGroundPicDay from "../images/d1.png";
 
 const DayOrNightPicker = ({ dayornight }) => {
+  let isDay = false;
+
+  if (dayornight == 1) {
+    isDay = true;
+    console.log("tureeee");
+  } else {
+    isDay = false;
+    console.log("faaaaaaaalse");
+  }
+
   return (
     <div>
-      <h1>{dayornight}</h1>
-      {/* <MoonContainer>
-        <img className="moon-pic" src={moonPic} alt="picture of the moon" />
-      </MoonContainer> */}
+      {isDay ? (
+        <div>
+          <BackGroundPic>
+            <img className="background-pic" src={backGroundPicDay} />
+          </BackGroundPic>
+          <PlanetPic>
+            <div className="planet-container">
+              <Sun />
+            </div>
+          </PlanetPic>
+        </div>
+      ) : (
+        <div>
+          <BackGroundPic>
+            <img className="background-pic" src={backGroundPicNight} />
+          </BackGroundPic>
+          <PlanetPic>
+            <div className="planet-container">
+              <Moon />
+            </div>
+          </PlanetPic>
+        </div>
+      )}
     </div>
   );
 };
 
-/* const MoonContainer = styled(motion.div)`
-  .moon-pic {
-    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #fff7f7,
-      0 0 4vw 0.4vw #fff7f7, inset 0 0 1.5vw 0.4vw #fff7f7,
-      inset 0 0 0.4vw 0.2vw #fff7f7, inset 0 0 0.5vw 0.2vw #fff7f7;
+const BackGroundPic = styled(motion.div)`
+  .background-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
   }
-`; */
+`;
+
+const PlanetPic = styled(motion.div)`
+  .planet-container {
+    img {
+      border-radius: 50%;
+      box-sizing: border-box;
+      position: absolute;
+      top: -70px;
+      right: -79px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+`;
 
 export default DayOrNightPicker;

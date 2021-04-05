@@ -4,11 +4,8 @@ import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
 import Header from "../components/header";
 import Forecast from "../components/forecast";
-import Moon from "../components/moon";
-import Sun from "../components/sun";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import backGroundPicNight from "../images/d1.png";
 import DayOrNightPicker from "../components/dayOrnightPicker";
 
 const Home = () => {
@@ -26,7 +23,6 @@ const Home = () => {
   );
 
   console.log(searchedCurrent);
-  /*   console.log(searchedCurrent.is_day); */
   const forecast = useSelector((state) => state.location.searchedForecast);
 
   return (
@@ -59,28 +55,24 @@ const Home = () => {
             </ForecastItem>
           </div>
         ) : (
-          <Weather
-            weather={23}
-            location={"a nice place"}
-            country={" somewhere on earth"}
-            conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
-            conditionText={"Sunny & Nice"}
-          />
+          <div>
+            <Weather
+              weather={23}
+              location={"a nice place"}
+              country={" somewhere on earth"}
+              conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
+              conditionText={"Sunny & Nice"}
+            />
+          </div>
         )}
       </HomeContainer>
 
       <HomeBackground>
-        {typeof searchedLocation === "undefined" ? (
-          <DayOrNightPicker dayornight={"1"} />
+        {typeof searchedLocation !== "undefined" ? (
+          <DayOrNightPicker dayornight={searchedCurrent.is_day} />
         ) : (
-          console.log("hej")
+          <DayOrNightPicker dayornight={"1"} />
         )}
-
-        {/* <DayOrNightPicker isdayornight={searchedCurrent.condition.is_day} /> */}
-        <img className="background-pic" src={backGroundPicNight} />
-        <div className="planet-container">
-          <Sun />
-        </div>
       </HomeBackground>
     </div>
   );
@@ -111,26 +103,6 @@ const HomeBackground = styled(motion.div)`
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-
-  .planet-container {
-    img {
-      border-radius: 50%;
-      box-sizing: border-box;
-      position: absolute;
-      top: -70px;
-      right: -79px;
-      width: 20%;
-      height: 35%;
-    }
-  }
-  .background-pic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-  }
 `;
 
 export default Home;

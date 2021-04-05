@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import moonPic from "../images/moon.jpg";
 
 const Moon = () => {
-
   return (
     <div>
       <MoonContainer>
