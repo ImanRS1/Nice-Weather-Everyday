@@ -9,6 +9,7 @@ import Sun from "../components/sun";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import backGroundPicNight from "../images/d1.png";
+import DayOrNightPicker from "../components/dayOrnightPicker";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ const Home = () => {
   );
 
   console.log(searchedCurrent);
-
+  /*   console.log(searchedCurrent.is_day); */
   const forecast = useSelector((state) => state.location.searchedForecast);
 
   return (
@@ -34,32 +35,16 @@ const Home = () => {
         <Header />
 
         {typeof searchedLocation !== "undefined" ? (
-          <Weather
-            weather={searchedCurrent.temp_c}
-            location={searchedLocation.name}
-            country={searchedLocation.country}
-            condition={searchedCurrent.condition}
-            conditionText={searchedCurrent.condition.text}
-            conditionIcon={searchedCurrent.condition.icon}
-          />
-        ) : (
-          ""
-        )}
-
-        {typeof searchedLocation === "undefined" ? (
-          <Weather
-            weather={23}
-            location={"a nice place"}
-            country={" somewhere on earth"}
-            conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
-            conditionText={"Sunny & Nice"}
-          />
-        ) : (
-          ""
-        )}
-
-        {typeof forecast !== "undefined" ? (
           <div>
+            <Weather
+              weather={searchedCurrent.temp_c}
+              location={searchedLocation.name}
+              country={searchedLocation.country}
+              condition={searchedCurrent.condition}
+              conditionText={searchedCurrent.condition.text}
+              conditionIcon={searchedCurrent.condition.icon}
+            />
+
             <ForecastItem>
               {forecast.map((thisForecast) => (
                 <Forecast
@@ -74,11 +59,24 @@ const Home = () => {
             </ForecastItem>
           </div>
         ) : (
-          ""
+          <Weather
+            weather={23}
+            location={"a nice place"}
+            country={" somewhere on earth"}
+            conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
+            conditionText={"Sunny & Nice"}
+          />
         )}
       </HomeContainer>
 
       <HomeBackground>
+        {typeof searchedLocation === "undefined" ? (
+          <DayOrNightPicker dayornight={"1"} />
+        ) : (
+          console.log("hej")
+        )}
+
+        {/* <DayOrNightPicker isdayornight={searchedCurrent.condition.is_day} /> */}
         <img className="background-pic" src={backGroundPicNight} />
         <div className="planet-container">
           <Sun />
