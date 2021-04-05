@@ -5,9 +5,10 @@ import Weather from "../components/weather";
 import Header from "../components/header";
 import Forecast from "../components/forecast";
 import Moon from "../components/moon";
+import Sun from "../components/sun";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import backGroundPicNight from "../images/n1.jpg";
+import backGroundPicNight from "../images/d1.png";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -80,7 +81,7 @@ const Home = () => {
       <HomeBackground>
         <img className="background-pic" src={backGroundPicNight} />
         <div className="planet-container">
-          <Moon />
+          <Sun />
         </div>
       </HomeBackground>
     </div>
