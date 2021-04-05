@@ -11,8 +11,7 @@ const Weather = ({
   return (
     <WeatherContainer>
       <h2>
-        The current weather in {location} - {country}, is {weather} degrees
-        celcius.
+        The current weather in {location} - {country}, is {weather} &#176;C.
       </h2>
 
       <Condition>

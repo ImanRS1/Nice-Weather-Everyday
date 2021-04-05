@@ -48,7 +48,7 @@ const Home = () => {
         {typeof searchedLocation === "undefined" ? (
           <Weather
             weather={23}
-            location={"a nice city"}
+            location={"a nice place"}
             country={" somewhere on earth"}
             conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
             conditionText={"Sunny & Nice"}
