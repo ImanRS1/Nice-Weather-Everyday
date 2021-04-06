@@ -5,9 +5,9 @@ import Weather from "../components/weather";
 import Header from "../components/header";
 import Forecast from "../components/forecast";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import DayOrNightPicker from "../components/dayOrnightPicker";
-import { fadeInAnim, fadeInAnim2, animStagger } from "../animations";
+import { fadeInAnim, fadeInAnim3, animStagger } from "../animations";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -30,9 +30,10 @@ const Home = () => {
     <div>
       <HomeContainer>
         <Header />
-        <motion.div variants={fadeInAnim} initial="hidden" animate="show">
-          {typeof searchedLocation !== "undefined" ? (
-            <div>
+
+        {typeof searchedLocation !== "undefined" ? (
+          <div>
+            <motion.div variants={fadeInAnim3} initial="hidden" animate="show">
               <Weather
                 weather={searchedCurrent.temp_c}
                 location={searchedLocation.name}
@@ -41,37 +42,38 @@ const Home = () => {
                 conditionText={searchedCurrent.condition.text}
                 conditionIcon={searchedCurrent.condition.icon}
               />
-              <ForecastItem>
-                {forecast.map((thisForecast) => (
-                  <motion.div
-                    variants={fadeInAnim2}
-                    initial="hidden"
-                    animate="show"
-                  >
-                    <Forecast
-                      date={thisForecast.date}
-                      sunrise={thisForecast.astro.sunrise}
-                      sunset={thisForecast.astro.sunset}
-                      weather={thisForecast.day.avgtemp_c}
-                      key={thisForecast.date}
-                      condition={thisForecast.day.condition}
-                    />
-                  </motion.div>
-                ))}
-              </ForecastItem>
-            </div>
-          ) : (
-            <div>
-              <Weather
-                weather={23}
-                location={"a nice place"}
-                country={" somewhere on earth"}
-                conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
-                conditionText={"Sunny & Nice"}
-              />
-            </div>
-          )}
-        </motion.div>
+            </motion.div>
+            <ForecastItem>
+              {forecast.map((thisForecast) => (
+                <motion.div>
+                  <Forecast
+                    date={thisForecast.date}
+                    sunrise={thisForecast.astro.sunrise}
+                    sunset={thisForecast.astro.sunset}
+                    weather={thisForecast.day.avgtemp_c}
+                    key={thisForecast.date}
+                    condition={thisForecast.day.condition}
+                  />
+                </motion.div>
+              ))}
+            </ForecastItem>
+          </div>
+        ) : (
+          <motion.div
+            variants={fadeInAnim}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+          >
+            <Weather
+              weather={23}
+              location={"a nice place"}
+              country={" somewhere on earth"}
+              conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
+              conditionText={"Sunny & Nice"}
+            />
+          </motion.div>
+        )}
       </HomeContainer>
 
       <HomeBackground>

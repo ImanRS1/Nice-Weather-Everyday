@@ -41,8 +41,8 @@ const Header = () => {
             onClick={submitSearch}
             type="submit"
             whileHover={{
-              color: "white",
-              backgroundColor: "silver",
+              color: "rgb(255,255,255)",
+              backgroundColor: "rgba(116, 116, 116, 0.9)",
             }}
           >
             Search
@@ -69,6 +69,7 @@ const HeaderContainer = styled(motion.div)`
     }
   }
   button {
+    font: black;
     padding: 0.5rem 0;
     border: none;
     width: 5rem;

@@ -6,7 +6,7 @@ import { fadeInAnim2 } from "../animations";
 
 const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
   return (
-    <motion.div>
+    <motion.div variants={fadeInAnim2} initial="hidden" animate="show">
       <ForeCastItem>
         {date}
         <div>Temperature: {weather}&#176;C.</div>
