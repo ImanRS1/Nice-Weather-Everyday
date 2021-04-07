@@ -4,6 +4,7 @@ import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
 import Header from "../components/header";
 import Forecast from "../components/forecast";
+import Windy from "../components/windy";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import DayOrNightPicker from "../components/dayOrnightPicker";
@@ -71,6 +72,7 @@ const Home = () => {
               country={" somewhere on earth"}
               conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
               conditionText={"Sunny & Nice"}
+              wind={"2"}
             />
           </motion.div>
         )}

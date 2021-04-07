@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import Windy from "./windy";
 
 const Weather = ({
   weather,
@@ -7,6 +8,7 @@ const Weather = ({
   country,
   conditionIcon,
   conditionText,
+  wind,
 }) => {
   return (
     <WeatherContainer>
@@ -17,6 +19,8 @@ const Weather = ({
         <Condition>
           <img src={conditionIcon} />
           <h2>{conditionText}</h2>
+          <Windy />
+          <h2> {wind} mph</h2>
         </Condition>
       </motion.div>
     </WeatherContainer>
