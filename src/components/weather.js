@@ -19,7 +19,7 @@ const Weather = ({
         <Condition>
           <img src={conditionIcon} />
           <h2>{conditionText}</h2>
-          <Windy />
+          <Windy wind={wind} />
           <h2> {wind} mph</h2>
         </Condition>
       </motion.div>

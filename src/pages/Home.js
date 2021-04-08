@@ -4,9 +4,9 @@ import { loadLocation } from "../actions/locationAction";
 import Weather from "../components/weather";
 import Header from "../components/header";
 import Forecast from "../components/forecast";
-import Windy from "../components/windy";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { v4 as uudv4 } from "uuid";
 import DayOrNightPicker from "../components/dayOrnightPicker";
 import { fadeInAnim, fadeInAnim3, animStagger } from "../animations";
 
@@ -42,6 +42,8 @@ const Home = () => {
                 condition={searchedCurrent.condition}
                 conditionText={searchedCurrent.condition.text}
                 conditionIcon={searchedCurrent.condition.icon}
+                wind={searchedCurrent.wind_mph}
+                key={uudv4()}
               />
             </motion.div>
             <ForecastItem>
@@ -52,7 +54,7 @@ const Home = () => {
                     sunrise={thisForecast.astro.sunrise}
                     sunset={thisForecast.astro.sunset}
                     weather={thisForecast.day.avgtemp_c}
-                    key={thisForecast.date}
+                    key={uudv4()}
                     condition={thisForecast.day.condition}
                   />
                 </motion.div>
@@ -73,6 +75,7 @@ const Home = () => {
               conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
               conditionText={"Sunny & Nice"}
               wind={"2"}
+              key={uudv4()}
             />
           </motion.div>
         )}
