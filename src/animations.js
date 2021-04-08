@@ -37,7 +37,7 @@ export const fadeInAnim = {
   exit: {
     opacity: 0,
     transition: {
-      duration: 3,
+      duration: 5,
       ease: "easeOut",
     },
   },
@@ -54,9 +54,17 @@ export const fadeInAnim2 = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1.5,
+      duration: 1,
       ease: "easeOut",
-      /* type: "spring", */
+    },
+  },
+  exit: {
+    scale: 0.1,
+    opacity: 0,
+    y: -125,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
     },
   },
 };
@@ -64,11 +72,22 @@ export const fadeInAnim2 = {
 export const fadeInAnim3 = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: -100,
+    scale: 0.1,
   },
   show: {
+    scale: 1,
     y: 0,
     opacity: 1,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    scale: 0.1,
+    y: -100,
+    opacity: 0,
     transition: {
       duration: 1,
       ease: "easeOut",

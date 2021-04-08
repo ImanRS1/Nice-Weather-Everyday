@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Moon from "../components/moon";
@@ -20,7 +20,7 @@ const DayOrNightPicker = ({ dayornight }) => {
       {isDay ? (
         <div>
           <BackGroundPic>
-            <img className="background-pic" src={backGroundPicDay} />
+            <img className="background-pic" src={backGroundPicDay} alt="background during day"/>
           </BackGroundPic>
           <PlanetPic>
             <div className="planet-container">
@@ -31,7 +31,7 @@ const DayOrNightPicker = ({ dayornight }) => {
       ) : (
         <div>
           <BackGroundPic>
-            <img className="background-pic" src={backGroundPicNight} />
+            <img className="background-pic" src={backGroundPicNight} alt="background during night" />
           </BackGroundPic>
           <PlanetPic>
             <div className="planet-container">

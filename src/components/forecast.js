@@ -2,22 +2,21 @@ import sunriseImage from "../images/sunrise.svg";
 import sunsetImage from "../images/sunset.svg";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { fadeInAnim2 } from "../animations";
 
 const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
   return (
-    <motion.div variants={fadeInAnim2} initial="hidden" animate="show">
+    <motion.div >
       <ForeCastItem>
         {date}
         <div>Temperature: {weather}&#176;C.</div>
         <SunRiseAndSet>
-          <img src={sunriseImage} />
+          <img src={sunriseImage} alt="sunrise time"/>
           {sunrise}
-          <img src={sunsetImage} />
+          <img src={sunsetImage} alt="sunset time"/>
           {sunset}
         </SunRiseAndSet>
         <Condition>
-          <img src={condition.icon} />
+          <img src={condition.icon} alt={condition.text} />
           {condition.text}
         </Condition>
       </ForeCastItem>

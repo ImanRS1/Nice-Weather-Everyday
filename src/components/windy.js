@@ -25,13 +25,6 @@ const Windy = ({ wind }) => {
     animatedWindValue = 0.2;
   }
 
-  console.log("vinder är " + roundedWindPower + " och " + animatedWindValue);
-
-  const windValue = () => {
-    console.log("ANIMATED WIND VALUE ÄR " + animatedWindValue);
-    return animatedWindValue;
-  };
-
   return (
     <div>
       <WindContainer>
@@ -40,7 +33,7 @@ const Windy = ({ wind }) => {
           src={wt1}
           alt="wind tubine blade"
           transition={{
-            duration: windValue(),
+            duration: animatedWindValue,
             repeat: Infinity,
             ease: "linear",
           }}

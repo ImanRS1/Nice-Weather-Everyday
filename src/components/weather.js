@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Windy from "./windy";
 
 const Weather = ({
@@ -12,17 +12,19 @@ const Weather = ({
 }) => {
   return (
     <WeatherContainer>
-      <motion.div>
-        <h2>
-          The current weather in {location} - {country}, is {weather} &#176;C.
-        </h2>
-        <Condition>
-          <img src={conditionIcon} />
-          <h2>{conditionText}</h2>
-          <Windy wind={wind} />
-          <h2> {wind} mph</h2>
-        </Condition>
-      </motion.div>
+      <AnimatePresence>
+        <motion.div>
+          <h2>
+            The current weather in {location} - {country}, is {weather} &#176;C.
+          </h2>
+          <Condition>
+            <img src={conditionIcon} alt={conditionText} />
+            <h2>{conditionText}</h2>
+            <Windy wind={wind} />
+            <h2> {wind} mph</h2>
+          </Condition>
+        </motion.div>
+      </AnimatePresence>
     </WeatherContainer>
   );
 };

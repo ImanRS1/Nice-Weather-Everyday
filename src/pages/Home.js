@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { v4 as uudv4 } from "uuid";
 import DayOrNightPicker from "../components/dayOrnightPicker";
-import { fadeInAnim, fadeInAnim3, animStagger } from "../animations";
+import { fadeInAnim, fadeInAnim3, fadeInAnim2 } from "../animations";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -25,6 +25,7 @@ const Home = () => {
   );
 
   console.log(searchedCurrent);
+  console.log(searchedLocation);
   const forecast = useSelector((state) => state.location.searchedForecast);
 
   return (
@@ -34,50 +35,68 @@ const Home = () => {
 
         {typeof searchedLocation !== "undefined" ? (
           <div>
-            <motion.div variants={fadeInAnim3} initial="hidden" animate="show">
-              <Weather
-                weather={searchedCurrent.temp_c}
-                location={searchedLocation.name}
-                country={searchedLocation.country}
-                condition={searchedCurrent.condition}
-                conditionText={searchedCurrent.condition.text}
-                conditionIcon={searchedCurrent.condition.icon}
-                wind={searchedCurrent.wind_mph}
+            <AnimatePresence exitBeforeEnter>
+              <motion.div
+                variants={fadeInAnim3}
+                initial="hidden"
+                animate="show"
+                exit="exit"
                 key={uudv4()}
-              />
-            </motion.div>
+              >
+                <Weather
+                  weather={searchedCurrent.temp_c}
+                  location={searchedLocation.name}
+                  country={searchedLocation.country}
+                  condition={searchedCurrent.condition}
+                  conditionText={searchedCurrent.condition.text}
+                  conditionIcon={searchedCurrent.condition.icon}
+                  wind={searchedCurrent.wind_mph}
+                  key={uudv4()}
+                />
+              </motion.div>
+            </AnimatePresence>
             <ForecastItem>
               {forecast.map((thisForecast) => (
-                <motion.div>
-                  <Forecast
-                    date={thisForecast.date}
-                    sunrise={thisForecast.astro.sunrise}
-                    sunset={thisForecast.astro.sunset}
-                    weather={thisForecast.day.avgtemp_c}
+                <AnimatePresence exitBeforeEnter>
+                  <motion.div
+                    variants={fadeInAnim2}
+                    initial="hidden"
+                    animate="show"
+                    exit="exit"
                     key={uudv4()}
-                    condition={thisForecast.day.condition}
-                  />
-                </motion.div>
+                  >
+                    <Forecast
+                      date={thisForecast.date}
+                      sunrise={thisForecast.astro.sunrise}
+                      sunset={thisForecast.astro.sunset}
+                      weather={thisForecast.day.avgtemp_c}
+                      condition={thisForecast.day.condition}
+                    />
+                  </motion.div>
+                </AnimatePresence>
               ))}
             </ForecastItem>
           </div>
         ) : (
-          <motion.div
-            variants={fadeInAnim}
-            initial="hidden"
-            animate="show"
-            exit="exit"
-          >
-            <Weather
-              weather={23}
-              location={"a nice place"}
-              country={" somewhere on earth"}
-              conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
-              conditionText={"Sunny & Nice"}
-              wind={"2"}
+          <AnimatePresence exitBeforeEnter>
+            <motion.div
+              variants={fadeInAnim}
+              initial="hidden"
+              animate="show"
+              exit="exit"
               key={uudv4()}
-            />
-          </motion.div>
+            >
+              <Weather
+                weather={23}
+                location={"a nice place"}
+                country={" somewhere on earth"}
+                conditionIcon={"//cdn.weatherapi.com/weather/64x64/day/113.png"}
+                conditionText={"Sunny & Nice"}
+                wind={"2"}
+                key={uudv4()}
+              />
+            </motion.div>
+          </AnimatePresence>
         )}
       </HomeContainer>
 
