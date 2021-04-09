@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import {
   LineChart,
   Line,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -11,46 +12,26 @@ import {
 } from "recharts";
 
 const WeatherChart = (chartData) => {
-  console.log(chartData);
+  console.log(chartData.data);
 
-  const data = [
-    {
-      name: "Page A",
-      uv: 1000,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-    },
-    {
-      name: "Page E",
-      uv: -1890,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-    },
-    {
-      name: "Page G",
-      uv: 2000,
-    },
-  ];
+  const [a, b, c, ...rest] = chartData.data;
+
+  console.log(a.time);
+
+  const returnTime = (fullTime) => {
+    const timeOnly = fullTime.slice(fullTime.length - 5);
+
+    return timeOnly;
+  };
 
   return (
     <div>
-      <LineChart width={600} height={300} data={data}>
-        <Line type="monotone" dataKey="uv" stroke="#f00606" />
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="name" />
-        <YAxis />
+      <LineChart width={400} height={200} data={chartData.data}>
+        <Line type="natural" dataKey="temp_c" stroke="#f00606" />
+        <CartesianGrid stroke="#fdfdfd" />
+        <XAxis dataKey="time" stroke="#fdfdfd" />
+        <YAxis stroke="#fdfdfd" />
+        <Tooltip />
       </LineChart>
     </div>
   );
