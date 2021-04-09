@@ -51,6 +51,7 @@ const Home = () => {
                   conditionText={searchedCurrent.condition.text}
                   conditionIcon={searchedCurrent.condition.icon}
                   wind={searchedCurrent.wind_mph}
+                  chartData={forecast[0].hour}
                   key={uudv4()}
                 />
               </motion.div>

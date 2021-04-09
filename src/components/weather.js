@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import Windy from "./windy";
+import WeatherChart from "./chart";
 
 const Weather = ({
   weather,
@@ -9,6 +10,7 @@ const Weather = ({
   conditionIcon,
   conditionText,
   wind,
+  chartData,
 }) => {
   return (
     <WeatherContainer>
@@ -20,6 +22,12 @@ const Weather = ({
           <Condition>
             <img src={conditionIcon} alt={conditionText} />
             <h2>{conditionText}</h2>
+            {location === "a nice place" ? (
+              ""
+            ) : (
+              <WeatherChart data={chartData} />
+            )}
+
             <Windy wind={wind} />
             <h2> {wind} mph</h2>
           </Condition>
