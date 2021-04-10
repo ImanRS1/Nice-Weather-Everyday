@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Butterflies from "../images/butterfliesgif.gif";
 import Owl from "../images/owlgif.gif";
+import { searchBarAnim } from "../animations";
 
 const BirdPicker = ({ dayornight }) => {
   let isDay = false;
@@ -22,13 +23,23 @@ const BirdPicker = ({ dayornight }) => {
               className="butterflies-pic"
               src={Butterflies}
               alt="butterflies"
+              variants={searchBarAnim}
+              initial="hidden"
+              animate="show"
             />
           </BirdContainer>
         </div>
       ) : (
         <div>
           <BirdContainer>
-            <motion.img className="owl-pic" src={Owl} alt="an owl" />
+            <motion.img
+              className="owl-pic"
+              src={Owl}
+              alt="an owl"
+              variants={searchBarAnim}
+              initial="hidden"
+              animate="show"
+            />
           </BirdContainer>
         </div>
       )}
