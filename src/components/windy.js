@@ -46,6 +46,7 @@ const Windy = ({ wind }) => {
 };
 
 const WindContainer = styled(motion.div)`
+margin-right: 1rem;
   width: 5rem;
   height: 5rem;
   position: relative;

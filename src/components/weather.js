@@ -18,12 +18,18 @@ const Weather = ({
         The current weather in {location} - {country}, is {weather} &#176;C.
       </h2>
       <Condition>
-        <img src={conditionIcon} alt={conditionText} />
-        <h2>{conditionText}</h2>
-        {location === "a nice place" ? "" : <WeatherChart data={chartData} />}
+        <div>
+          <div className="conditionHolder">
+            <img src={conditionIcon} alt={conditionText} />
+            <h2>{conditionText}</h2>
+          </div>
 
-        <Windy wind={wind} />
-        <h2> {wind} mph</h2>
+          <div className="conditionHolder">
+            <Windy wind={wind} />
+            <h2> {wind} mph</h2>
+          </div>
+        </div>
+        {location === "a nice place" ? "" : <WeatherChart data={chartData} />}
       </Condition>
     </WeatherContainer>
   );
@@ -36,6 +42,12 @@ const Condition = styled(motion.div)`
   img {
     height: 7rem;
     width: auto;
+  }
+
+  .conditionHolder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;
 

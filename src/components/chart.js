@@ -36,7 +36,7 @@ const WeatherChart = (chartData) => {
 
   return (
     <div>
-      <LineChart width={350} height={200} data={chartData.data}>
+      <LineChart width={350} height={200} data={chartData.data} margin={{ top: 5, right: 0, left: 0, bottom: 5 }}>
         <Line
           type="natural"
           dataKey="temp_c"
