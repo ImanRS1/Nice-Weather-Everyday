@@ -5,6 +5,7 @@ import Moon from "../components/moon";
 import Sun from "../components/sun";
 import backGroundPicNight from "../images/n1.jpg";
 import backGroundPicDay from "../images/d1.png";
+import Owl from "../images/owlgif.gif";
 
 const DayOrNightPicker = ({ dayornight }) => {
   let isDay = false;
@@ -38,6 +39,9 @@ const DayOrNightPicker = ({ dayornight }) => {
               <Moon />
             </div>
           </PlanetPic>
+         {/*  <BirdContainer>
+          <img className="bird-pic" src={Owl} alt="an owl" />
+          </BirdContainer> */}
         </div>
       )}
     </div>
@@ -67,6 +71,16 @@ const PlanetPic = styled(motion.div)`
       height: 300px;
     }
   }
+`;
+
+const BirdContainer = styled(motion.div)`
+    img {
+      position: absolute;
+      top: 8rem;
+      right: 30%;
+      width: 100px;
+      height: 100px;
+    }
 `;
 
 export default DayOrNightPicker;

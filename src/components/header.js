@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { titleAnim, searchBarAnim } from "../animations";
+import BirdPicker from "./birdPicker";
 
-const Header = () => {
+const Header = ({ dayornight }) => {
   const dispatch = useDispatch();
   const [textInput, setTextInput] = useState("");
 
@@ -22,9 +23,12 @@ const Header = () => {
   return (
     <div>
       <HeaderContainer>
-        <motion.h1 variants={titleAnim} initial="hidden" animate="show">
-          Nice Weather Everyday
-        </motion.h1>
+        <TitleContainer>
+          <BirdPicker dayornight={dayornight} />
+          <motion.h1 variants={searchBarAnim} initial="hidden" animate="show">
+            Nice Weather Everyday
+          </motion.h1>
+        </TitleContainer>
         <motion.form
           className="search"
           variants={searchBarAnim}
@@ -79,6 +83,10 @@ const HeaderContainer = styled(motion.div)`
       outline: none;
     }
   }
+`;
+
+const TitleContainer = styled(motion.div)`
+  position: relative;
 `;
 
 export default Header;

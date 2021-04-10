@@ -31,10 +31,9 @@ const Home = () => {
   return (
     <div>
       <HomeContainer>
-        <Header />
-
         {typeof searchedLocation !== "undefined" ? (
           <div>
+            <Header dayornight={searchedCurrent.is_day} />
             <AnimatePresence exitBeforeEnter>
               <motion.div
                 variants={fadeInAnim3}
@@ -80,6 +79,7 @@ const Home = () => {
           </div>
         ) : (
           <AnimatePresence exitBeforeEnter>
+            <Header dayornight={"1"} />
             <motion.div
               variants={fadeInAnim}
               initial="hidden"

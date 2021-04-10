@@ -11,7 +11,7 @@ const Moon = () => {
           className="moon-pic"
           src={moonPic}
           alt="picture of the moon"
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 105, repeat: Infinity, ease: "linear" }}
           animate={{ rotate: 360 }}
         />
       </MoonContainer>
