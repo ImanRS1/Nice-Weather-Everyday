@@ -14,25 +14,17 @@ const Weather = ({
 }) => {
   return (
     <WeatherContainer>
-      <AnimatePresence>
-        <motion.div>
-          <h2>
-            The current weather in {location} - {country}, is {weather} &#176;C.
-          </h2>
-          <Condition>
-            <img src={conditionIcon} alt={conditionText} />
-            <h2>{conditionText}</h2>
-            {location === "a nice place" ? (
-              ""
-            ) : (
-              <WeatherChart data={chartData} />
-            )}
+      <h2>
+        The current weather in {location} - {country}, is {weather} &#176;C.
+      </h2>
+      <Condition>
+        <img src={conditionIcon} alt={conditionText} />
+        <h2>{conditionText}</h2>
+        {location === "a nice place" ? "" : <WeatherChart data={chartData} />}
 
-            <Windy wind={wind} />
-            <h2> {wind} mph</h2>
-          </Condition>
-        </motion.div>
-      </AnimatePresence>
+        <Windy wind={wind} />
+        <h2> {wind} mph</h2>
+      </Condition>
     </WeatherContainer>
   );
 };
