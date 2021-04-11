@@ -50,10 +50,10 @@ const BirdPicker = ({ dayornight }) => {
 const BirdContainer = styled(motion.div)`
   .butterflies-pic {
     position: absolute;
-    top: -2rem;
-    right: -4rem;
-    width: 65px;
-    height: 65px;
+    top: -1rem;
+    right: -3rem;
+    width: 45px;
+    height: 45px;
   }
 
   .owl-pic {
