@@ -114,6 +114,11 @@ const Home = () => {
 
 const ForecastItem = styled(motion.div)`
   display: flex;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const HomeContainer = styled(motion.div)`
@@ -128,6 +133,11 @@ const HomeContainer = styled(motion.div)`
   z-index: 2;
   position: relative;
   transition: all 0.5s ease;
+
+  @media screen and (max-width: 900px) {
+    height: auto;
+    margin-top: 5rem;
+  }
 `;
 
 const HomeBackground = styled(motion.div)`
@@ -136,8 +146,8 @@ const HomeBackground = styled(motion.div)`
   top: 0;
   left: 0;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
 `;
 
 export default Home;

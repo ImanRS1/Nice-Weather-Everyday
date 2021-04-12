@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
   return (
-    <motion.div >
+    <motion.div>
       <ForeCastItem>
-        {date}
-        <div>Temperature: {weather}&#176;C.</div>
+        <p>{date}</p>
+        <div> Temperature: {weather}&#176;C.</div>
         <SunRiseAndSet>
-          <img src={sunriseImage} alt="sunrise time"/>
+          <img src={sunriseImage} alt="sunrise time" />
           {sunrise}
-          <img src={sunsetImage} alt="sunset time"/>
+          <img src={sunsetImage} alt="sunset time" />
           {sunset}
         </SunRiseAndSet>
         <Condition>
@@ -28,6 +28,10 @@ const Condition = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 900px) {
+    margin-left: 1rem;
+  }
 `;
 
 const ForeCastItem = styled(motion.div)`
@@ -39,11 +43,25 @@ const ForeCastItem = styled(motion.div)`
   padding: 0.5rem;
   background-color: rgba(5, 5, 5, 0.15);
   border-radius: 1rem;
-  box-shadow: -10px 15px 18px #2b2b2b;
+  box-shadow: -10px 15px 18px #000000;
   height: 10rem;
   width: 15rem;
   h3 {
     margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 29rem;
+    height: 7rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    p {
+      margin-right: 1rem;
+    }
   }
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Butterflies from "../images/butterfliesgif.gif";
 import Owl from "../images/owlgif.gif";
-import { searchBarAnim } from "../animations";
+import { fadeInAnim } from "../animations";
 
 const BirdPicker = ({ dayornight }) => {
   let isDay = false;
@@ -23,7 +23,7 @@ const BirdPicker = ({ dayornight }) => {
               className="butterflies-pic"
               src={Butterflies}
               alt="butterflies"
-              variants={searchBarAnim}
+              variants={fadeInAnim}
               initial="hidden"
               animate="show"
             />
@@ -36,7 +36,7 @@ const BirdPicker = ({ dayornight }) => {
               className="owl-pic"
               src={Owl}
               alt="an owl"
-              variants={searchBarAnim}
+              variants={fadeInAnim}
               initial="hidden"
               animate="show"
             />
@@ -62,6 +62,17 @@ const BirdContainer = styled(motion.div)`
     right: -6rem;
     width: 100px;
     height: 100px;
+  }
+
+  @media screen and (max-width: 900px) {
+
+    .owl-pic {
+    position: absolute;
+    top: -2rem;
+    right: -4rem;
+    width: 75px;
+    height: 75px;
+  }
   }
 `;
 

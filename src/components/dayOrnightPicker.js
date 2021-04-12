@@ -21,7 +21,11 @@ const DayOrNightPicker = ({ dayornight }) => {
       {isDay ? (
         <div>
           <BackGroundPic>
-            <img className="background-pic" src={backGroundPicDay} alt="background during day"/>
+            <img
+              className="background-pic"
+              src={backGroundPicDay}
+              alt="background during day"
+            />
           </BackGroundPic>
           <PlanetPic>
             <div className="planet-container">
@@ -32,16 +36,17 @@ const DayOrNightPicker = ({ dayornight }) => {
       ) : (
         <div>
           <BackGroundPic>
-            <img className="background-pic" src={backGroundPicNight} alt="background during night" />
+            <img
+              className="background-pic"
+              src={backGroundPicNight}
+              alt="background during night"
+            />
           </BackGroundPic>
           <PlanetPic>
             <div className="planet-container">
               <Moon />
             </div>
           </PlanetPic>
-         {/*  <BirdContainer>
-          <img className="bird-pic" src={Owl} alt="an owl" />
-          </BirdContainer> */}
         </div>
       )}
     </div>
@@ -50,12 +55,15 @@ const DayOrNightPicker = ({ dayornight }) => {
 
 const BackGroundPic = styled(motion.div)`
   .background-pic {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    object-fit: cover;
     height: 100vh;
     width: 100vw;
-    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 `;
 
@@ -70,17 +78,16 @@ const PlanetPic = styled(motion.div)`
       width: 300px;
       height: 300px;
     }
-  }
-`;
 
-const BirdContainer = styled(motion.div)`
-    img {
-      position: absolute;
-      top: 8rem;
-      right: 30%;
-      width: 100px;
-      height: 100px;
+    @media screen and (max-width: 900px) {
+      img {
+        top: -50px;
+        right: -59px;
+        width: 200px;
+        height: 200px;
+      }
     }
+  }
 `;
 
 export default DayOrNightPicker;

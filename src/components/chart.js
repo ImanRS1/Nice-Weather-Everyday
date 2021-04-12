@@ -6,6 +6,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from "recharts";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -37,33 +38,41 @@ const WeatherChart = (chartData) => {
   };
 
   return (
-    <div>
-      <LineChart
-        width={350}
-        height={200}
-        data={chartData.data}
-        margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
-      >
-        <Line
-          type="natural"
-          dataKey="temp_c"
-          stroke="#f00606"
-          dot={false}
-          animationDuration={4000}
-        />
-        <CartesianGrid stroke="rgba(5, 5, 5, 0)" />
-        <XAxis
-          tick={false}
-          dataKey="time"
-          stroke="#fefefe"
-          label={{ value: "Time", stroke: "#fefefe" }}
-        />
-        <YAxis stroke="#fdfdfd" />
-        <Tooltip content={<CustomTooltip />} />
-      </LineChart>
-    </div>
+    <ChartContainer>
+      <ResponsiveContainer width="100%" height={200}>
+        <LineChart
+          data={chartData.data}
+          margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
+          className="theChart"
+        >
+          <Line
+            type="natural"
+            dataKey="temp_c"
+            stroke="#f00606"
+            dot={false}
+            animationDuration={4000}
+          />
+          <CartesianGrid stroke="rgba(5, 5, 5, 0)" />
+          <XAxis
+            tick={false}
+            dataKey="time"
+            stroke="#fefefe"
+            label={{ value: "Time", stroke: "#fefefe" }}
+          />
+          <YAxis stroke="#fdfdfd" />
+          <Tooltip content={<CustomTooltip />} />
+        </LineChart>
+      </ResponsiveContainer>
+    </ChartContainer>
   );
 };
+
+const ChartContainer = styled(motion.div)`
+  width: 500px;
+  @media screen and (max-width: 900px) {
+    padding-right: 2.5rem;
+  }
+`;
 
 const CustomToolTip = styled(motion.div)`
   display: flex;
@@ -72,10 +81,6 @@ const CustomToolTip = styled(motion.div)`
   align-items: center;
   p {
     margin: 0;
-  }
-  .time {
-  }
-  .temp {
   }
 
   .time-and-condition {

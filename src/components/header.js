@@ -26,7 +26,7 @@ const Header = ({ dayornight }) => {
         <TitleContainer>
           <BirdPicker dayornight={dayornight} />
           <motion.h1 variants={searchBarAnim} initial="hidden" animate="show">
-            Nice Weather Everyday
+            Nice Weather <span className="lastTitleWord">Everyday</span>
           </motion.h1>
         </TitleContainer>
         <motion.form
@@ -83,10 +83,27 @@ const HeaderContainer = styled(motion.div)`
       outline: none;
     }
   }
+
+  @media screen and (max-width: 900px) {
+    input {
+      font-size: 0.7rem;
+      text-align: center;
+      width: 15rem;
+    }
+    button {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 const TitleContainer = styled(motion.div)`
   position: relative;
+
+  @media screen and (max-width: 900px) {
+    .lastTitleWord {
+      display: block;
+    }
+  }
 `;
 
 export default Header;

@@ -18,7 +18,7 @@ const Weather = ({
         The current weather in {location} - {country}, is {weather} &#176;C.
       </h2>
       <Condition>
-        <div>
+        <div className="conditionContainer">
           <div className="conditionHolder">
             <img src={conditionIcon} alt={conditionText} />
             <h2>{conditionText}</h2>
@@ -49,6 +49,17 @@ const Condition = styled(motion.div)`
     align-items: center;
     justify-content: center;
   }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+
+    .conditionHolder {
+      padding: 0 1rem;
+    }
+    .conditionContainer {
+      display: flex;
+    }
+  }
 `;
 
 const WeatherContainer = styled(motion.div)`
@@ -56,6 +67,12 @@ const WeatherContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 900px) {
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export default Weather;

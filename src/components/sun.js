@@ -32,11 +32,6 @@ const Sun = () => {
 };
 
 const SunContainer = styled(motion.div)`
-  /* .sun-pic {
-    box-shadow: 0 0 0.1vw 0.4vw #fded0f, 0 0 0.4vw 0.6vw #ffd67f,
-      0 0 4vw 0.9vw #ffc342, inset 0 0 1.5vw 0.4vw #f1c604,
-      inset 0 0 0.4vw 0.2vw #f1c604, inset 0 0 0.5vw 0.2vw #f1c604;
-  } */
 `;
 
 export default Sun;
