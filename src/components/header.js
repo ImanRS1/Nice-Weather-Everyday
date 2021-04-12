@@ -85,10 +85,13 @@ const HeaderContainer = styled(motion.div)`
   }
 
   @media screen and (max-width: 900px) {
+    h1 {
+      font-size: 2.1rem;
+    }
     input {
       font-size: 0.7rem;
       text-align: center;
-      width: 15rem;
+      width: 20rem;
     }
     button {
       font-size: 0.7rem;

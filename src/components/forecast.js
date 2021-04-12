@@ -41,7 +41,7 @@ const ForeCastItem = styled(motion.div)`
   flex-direction: column;
   margin: 1rem;
   padding: 0.5rem;
-  background-color: rgba(5, 5, 5, 0.15);
+  background-color: rgba(5, 5, 5, 0.35);
   border-radius: 1rem;
   box-shadow: -10px 15px 18px #000000;
   height: 10rem;
