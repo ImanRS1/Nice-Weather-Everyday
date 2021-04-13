@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Nice-Weather-Everyday/static/js/main.133074a3.chunk.js",
-    "main.js.map": "/Nice-Weather-Everyday/static/js/main.133074a3.chunk.js.map",
+    "main.js": "/Nice-Weather-Everyday/static/js/main.cde74622.chunk.js",
+    "main.js.map": "/Nice-Weather-Everyday/static/js/main.cde74622.chunk.js.map",
     "runtime-main.js": "/Nice-Weather-Everyday/static/js/runtime-main.f611bc39.js",
     "runtime-main.js.map": "/Nice-Weather-Everyday/static/js/runtime-main.f611bc39.js.map",
     "static/js/2.60dee0a4.chunk.js": "/Nice-Weather-Everyday/static/js/2.60dee0a4.chunk.js",
@@ -24,6 +24,6 @@
   "entrypoints": [
     "static/js/runtime-main.f611bc39.js",
     "static/js/2.60dee0a4.chunk.js",
-    "static/js/main.133074a3.chunk.js"
+    "static/js/main.cde74622.chunk.js"
   ]
 }
