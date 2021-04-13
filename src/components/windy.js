@@ -70,6 +70,27 @@ margin-right: 1rem;
     bottom: 0.6rem;
     left: 2.3rem;
   }
+
+  @media screen and (max-width: 415px) {
+    margin-right: 0rem;
+
+    .wt1 {
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+    top: 0.1rem;
+    
+    z-index: 1;
+    left: 1.26rem;
+  }
+    .wt2 {
+    height: 2.5rem;
+    width: 1rem;
+    position: absolute;
+    bottom: 1.2rem;
+    left: 2.3rem;
+  }
+  }
 `;
 
 export default Windy;

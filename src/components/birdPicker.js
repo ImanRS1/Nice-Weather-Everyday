@@ -88,6 +88,54 @@ const BirdContainer = styled(motion.div)`
       height: 60px;
     }
   }
+
+  @media screen and (max-width: 650px) {
+    .butterflies-pic {
+      top: 5rem;
+      right: 4rem;
+      width: 35px;
+      height: 35px;
+    }
+
+    .owl-pic {
+      top: 4rem;
+      right: 3.5rem;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .butterflies-pic {
+      top: 8rem;
+      right: -1rem;
+      width: 35px;
+      height: 35px;
+    }
+
+    .owl-pic {
+      top: 7rem;
+      right: -2rem;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    .butterflies-pic {
+      top: 5rem;
+      right: 1rem;
+      width: 30px;
+      height: 30px;
+    }
+
+    .owl-pic {
+      top: 3.9rem;
+      right: 0rem;
+      width: 60px;
+      height: 60px;
+    }
+  }
 `;
 
 export default BirdPicker;

@@ -8,7 +8,10 @@ const Forecast = ({ sunrise, sunset, date, weather, condition }) => {
     <motion.div>
       <ForeCastItem>
         <p>{date}</p>
-        <div> Temperature: {weather}&#176;C.</div>
+        <div>
+          {" "}
+          Temperature: <span className="degreesCelcius">{weather}&#176;C.</span>
+        </div>
         <SunRiseAndSet>
           <img src={sunriseImage} alt="sunrise time" />
           {sunrise}
@@ -51,6 +54,10 @@ const ForeCastItem = styled(motion.div)`
   box-shadow: -10px 15px 18px #000000;
   height: 10rem;
   width: 15rem;
+  .degreesCelcius {
+    color: #ff5252;
+  }
+
   h3 {
     margin: 0;
   }

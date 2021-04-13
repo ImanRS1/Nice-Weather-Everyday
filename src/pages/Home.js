@@ -143,6 +143,7 @@ const HomeContainer = styled(motion.div)`
 
   @media screen and (max-width: 650px) {
     width: 90vw;
+    margin-top: 1rem;
   }
 `;
 

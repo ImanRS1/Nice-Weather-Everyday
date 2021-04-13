@@ -5,6 +5,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { titleAnim, searchBarAnim } from "../animations";
 import BirdPicker from "./birdPicker";
+import Cloud from "../images/cloud.png";
+import Cloud2 from "../images/cloud2.png";
+import HoverImage from "react-hover-image";
 
 const Header = ({ dayornight }) => {
   const dispatch = useDispatch();
@@ -50,6 +53,9 @@ const Header = ({ dayornight }) => {
             }}
           >
             Search
+            <CloudContainer>
+              <img src={Cloud} />
+            </CloudContainer>
           </motion.button>
         </motion.form>
       </HeaderContainer>
@@ -79,6 +85,9 @@ const HeaderContainer = styled(motion.div)`
     width: 5rem;
     border-top-right-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
+    &:hover {
+      cursor: pointer;
+    }
     &:focus {
       outline: none;
     }
@@ -103,17 +112,36 @@ const HeaderContainer = styled(motion.div)`
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 5;
+      position: relative;
     }
     button {
       display: block;
       border-radius: 0.8rem;
-      margin: 0.5rem;
+      margin: 0.8rem;
+      letter-spacing: 0.15rem;
+      padding: 0.2rem;
+      margin-top: 1.7rem;
     }
     input {
       border-radius: 0.8rem;
       font-size: 0.7rem;
       text-align: center;
       width: 20rem;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    input {
+      border-radius: 0.8rem;
+      font-size: 0.7rem;
+      text-align: center;
+      width: 70vw;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 1rem;
     }
   }
 `;
@@ -125,6 +153,51 @@ const TitleContainer = styled(motion.div)`
     .lastTitleWord {
       display: block;
     }
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 20rem;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 15rem;
+  }
+`;
+
+const CloudContainer = styled(motion.div)`
+  display: none;
+
+  @media screen and (max-width: 650px) {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 2.3rem;
+    left: 6rem;
+    img {
+      width: 9rem;
+      height: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 415px) {
+    top: 2.5rem;
+    left: 25%;
+  }
+
+  @media screen and (max-width: 375px) {
+    left: 22%;
+  }
+
+  @media screen and (max-width: 328px) {
+    left: 20%;
+  }
+
+  @media screen and (max-width: 290px) {
+    left: 15%;
+  }
+
+  @media screen and (max-width: 262px) {
+    left: 12%;
   }
 `;
 
