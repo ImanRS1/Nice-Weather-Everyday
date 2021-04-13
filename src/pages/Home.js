@@ -118,6 +118,8 @@ const ForecastItem = styled(motion.div)`
   @media screen and (max-width: 900px) {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-right: 0rem;
   }
 `;
 
@@ -137,6 +139,10 @@ const HomeContainer = styled(motion.div)`
   @media screen and (max-width: 900px) {
     height: auto;
     margin-top: 5rem;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 90vw;
   }
 `;
 

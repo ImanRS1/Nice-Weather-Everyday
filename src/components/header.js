@@ -97,6 +97,25 @@ const HeaderContainer = styled(motion.div)`
       font-size: 0.7rem;
     }
   }
+
+  @media screen and (max-width: 650px) {
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    button {
+      display: block;
+      border-radius: 0.8rem;
+      margin: 0.5rem;
+    }
+    input {
+      border-radius: 0.8rem;
+      font-size: 0.7rem;
+      text-align: center;
+      width: 20rem;
+    }
+  }
 `;
 
 const TitleContainer = styled(motion.div)`

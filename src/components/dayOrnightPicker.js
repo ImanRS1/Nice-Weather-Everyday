@@ -87,6 +87,15 @@ const PlanetPic = styled(motion.div)`
         height: 200px;
       }
     }
+
+    @media screen and (max-width: 650px) {
+      img {
+        top: -50px;
+        right: -59px;
+        width: 150px;
+        height: 150px;
+      }
+    }
   }
 `;
 

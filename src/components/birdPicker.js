@@ -65,14 +65,28 @@ const BirdContainer = styled(motion.div)`
   }
 
   @media screen and (max-width: 900px) {
+    .owl-pic {
+      top: -2rem;
+      right: -4rem;
+      width: 75px;
+      height: 75px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .butterflies-pic {
+      top: 5rem;
+      right: 4rem;
+      width: 35px;
+      height: 35px;
+    }
 
     .owl-pic {
-    position: absolute;
-    top: -2rem;
-    right: -4rem;
-    width: 75px;
-    height: 75px;
-  }
+      top: 3.5rem;
+      right: 3.8rem;
+      width: 60px;
+      height: 60px;
+    }
   }
 `;
 

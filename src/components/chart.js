@@ -72,6 +72,10 @@ const ChartContainer = styled(motion.div)`
   @media screen and (max-width: 900px) {
     padding-right: 2.5rem;
   }
+
+  @media screen and (max-width: 650px) {
+    width: 80vw;
+  }
 `;
 
 const CustomToolTip = styled(motion.div)`

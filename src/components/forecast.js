@@ -32,6 +32,10 @@ const Condition = styled(motion.div)`
   @media screen and (max-width: 900px) {
     margin-left: 1rem;
   }
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 const ForeCastItem = styled(motion.div)`
@@ -40,6 +44,7 @@ const ForeCastItem = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   margin: 1rem;
+
   padding: 0.5rem;
   background-color: rgba(5, 5, 5, 0.35);
   border-radius: 1rem;
@@ -62,6 +67,11 @@ const ForeCastItem = styled(motion.div)`
     p {
       margin-right: 1rem;
     }
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 80vw;
+    height: auto;
   }
 `;
 
