@@ -116,6 +116,7 @@ const HeaderContainer = styled(motion.div)`
       position: relative;
     }
     button {
+      background-color: transparent;
       display: block;
       border-radius: 0.8rem;
       margin: 0.8rem;
