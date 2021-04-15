@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Windy from "./windy";
 import WeatherChart from "./chart";
 

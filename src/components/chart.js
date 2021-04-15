@@ -21,14 +21,16 @@ const WeatherChart = (chartData) => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const slimmedTime = returnTime(label);
-      console.log(payload);
 
       return (
         <CustomToolTip>
           <p className="time">{`${slimmedTime} `}</p>
           <div className="time-and-condition">
             <p className="temp">{`${payload[0].value}`}&#176;C</p>
-            <img src={`${payload[0].payload.condition.icon}`} />
+            <img
+              src={`${payload[0].payload.condition.icon}`}
+              alt="icon of weather"
+            />
           </div>
         </CustomToolTip>
       );
@@ -49,7 +51,7 @@ const WeatherChart = (chartData) => {
             type="natural"
             dataKey="temp_c"
             stroke="#f00606"
-            dot={false}
+            dot={true}
             animationDuration={4000}
           />
           <CartesianGrid stroke="rgba(5, 5, 5, 0)" />

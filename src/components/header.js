@@ -3,11 +3,9 @@ import { fetchSearch } from "../actions/locationAction";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { titleAnim, searchBarAnim } from "../animations";
+import { searchBarAnim } from "../animations";
 import BirdPicker from "./birdPicker";
 import Cloud from "../images/cloud.png";
-import Cloud2 from "../images/cloud2.png";
-import HoverImage from "react-hover-image";
 
 const Header = ({ dayornight }) => {
   const dispatch = useDispatch();
@@ -54,7 +52,7 @@ const Header = ({ dayornight }) => {
           >
             Search
             <CloudContainer>
-              <img src={Cloud} />
+              <img src={Cloud} alt="a cloud" />
             </CloudContainer>
           </motion.button>
         </motion.form>

@@ -24,8 +24,6 @@ const Home = () => {
     (state) => state.location.searchedCurrent
   );
 
-  console.log(searchedCurrent);
-  console.log(searchedLocation);
   const forecast = useSelector((state) => state.location.searchedForecast);
 
   return (

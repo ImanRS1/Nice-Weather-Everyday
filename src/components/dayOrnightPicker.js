@@ -5,7 +5,6 @@ import Moon from "../components/moon";
 import Sun from "../components/sun";
 import backGroundPicNight from "../images/n1.jpg";
 import backGroundPicDay from "../images/d1.png";
-import Owl from "../images/owlgif.gif";
 
 const DayOrNightPicker = ({ dayornight }) => {
   let isDay = false;

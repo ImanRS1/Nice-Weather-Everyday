@@ -78,10 +78,9 @@ margin-right: 1rem;
     height: 3rem;
     width: 3rem;
     position: absolute;
-    top: 0.1rem;
-    
+    top: 0rem;
     z-index: 1;
-    left: 1.26rem;
+    left: 1.3rem;
   }
     .wt2 {
     height: 2.5rem;
