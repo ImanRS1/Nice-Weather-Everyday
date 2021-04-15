@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Nice-Weather-Everyday/static/js/main.a3295e99.chunk.js",
-    "main.js.map": "/Nice-Weather-Everyday/static/js/main.a3295e99.chunk.js.map",
+    "main.js": "/Nice-Weather-Everyday/static/js/main.6e121301.chunk.js",
+    "main.js.map": "/Nice-Weather-Everyday/static/js/main.6e121301.chunk.js.map",
     "runtime-main.js": "/Nice-Weather-Everyday/static/js/runtime-main.f611bc39.js",
     "runtime-main.js.map": "/Nice-Weather-Everyday/static/js/runtime-main.f611bc39.js.map",
     "static/js/2.60dee0a4.chunk.js": "/Nice-Weather-Everyday/static/js/2.60dee0a4.chunk.js",
@@ -16,14 +16,14 @@
     "static/media/moon.f46c566a.jpg": "/Nice-Weather-Everyday/static/media/moon.f46c566a.jpg",
     "static/media/n1.25790958.jpg": "/Nice-Weather-Everyday/static/media/n1.25790958.jpg",
     "static/media/owlgif.7e45a8e7.gif": "/Nice-Weather-Everyday/static/media/owlgif.7e45a8e7.gif",
-    "static/media/sunrise.70fcd41d.svg": "/Nice-Weather-Everyday/static/media/sunrise.70fcd41d.svg",
-    "static/media/sunset.ff754f83.svg": "/Nice-Weather-Everyday/static/media/sunset.ff754f83.svg",
+    "static/media/sunrise.7e7e8d6d.svg": "/Nice-Weather-Everyday/static/media/sunrise.7e7e8d6d.svg",
+    "static/media/sunset.d4fb0470.svg": "/Nice-Weather-Everyday/static/media/sunset.d4fb0470.svg",
     "static/media/wt1.27b84e29.png": "/Nice-Weather-Everyday/static/media/wt1.27b84e29.png",
     "static/media/wt2.b25e3a19.png": "/Nice-Weather-Everyday/static/media/wt2.b25e3a19.png"
   },
   "entrypoints": [
     "static/js/runtime-main.f611bc39.js",
     "static/js/2.60dee0a4.chunk.js",
-    "static/js/main.a3295e99.chunk.js"
+    "static/js/main.6e121301.chunk.js"
   ]
 }
